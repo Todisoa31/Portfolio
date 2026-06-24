@@ -1,0 +1,77 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+export default function About() {
+  return (
+    <section
+      id="about"
+      className="max-w-7xl mx-auto px-6 py-24"
+    >
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative w-[320px] h-80 mx-auto">
+            <div className="absolute inset-0 rounded-3xl bg-yellow-400 rotate-6" />
+
+            <Image
+              src="/images/profile.jpg"
+              alt="Todisoa Herinjanahary"
+              fill
+              className="rounded-3xl object-cover relative z-10"
+            />
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-red-500 font-semibold mb-3">
+            À PROPOS
+          </p>
+
+          <h2 className="text-4xl font-bold mb-6">
+            Développeur Fullstack JavaScript
+          </h2>
+
+          <p className="text-gray-400 leading-8">
+            Passionné par le développement web depuis plus de
+            6 ans, j&rsquo;accompagne les entreprises dans la création
+            d&rsquo;applications modernes, performantes et évolutives.
+
+            Mon expertise couvre React, Next.js, Node.js,
+            NestJS, MongoDB et PostgreSQL.
+          </p>
+
+          <div className="grid grid-cols-2 gap-6 mt-8">
+
+            <div>
+              <h3 className="text-yellow-400 text-3xl font-bold">
+                6+
+              </h3>
+
+              <p>Années d&rsquo;expérience</p>
+            </div>
+
+            <div>
+              <h3 className="text-yellow-400 text-3xl font-bold">
+                15+
+              </h3>
+
+              <p>Projets réalisés</p>
+            </div>
+
+          </div>
+        </motion.div>
+
+      </div>
+    </section>
+  );
+}
